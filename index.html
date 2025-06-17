@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDF & RMA Scheduling - Gantt Chart Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>EDF & RMA Scheduling - Gantt Chart Generator</h1>
+        
+        <!-- Process Selection -->
+        <div id="process-selection" class="section active">
+            <div class="input-group">
+                <label for="numProcesses">Number of Processes:</label>
+                <input type="number" id="numProcesses" min="1" max="10" value="3">
+            </div>
+            
+            <p class="generate-text">Generate input window for:</p>
+            
+            <div class="button-group">
+                <button id="edfBtn" class="algorithm-btn">EDF</button>
+                <button id="rmaBtn" class="algorithm-btn">RMA</button>
+            </div>
+        </div>
+        
+        <!-- Input Parameters and Gantt Chart -->
+        <div id="parameter-input" class="section">
+            <h2 id="algorithm-title">Algorithm Parameters</h2>
+            
+            <div id="process-inputs" class="process-inputs"></div>
+            
+            <div class="simulation-controls">
+                <div class="slider-container">
+                    <label for="arrivalTime">Arrival Time: <span id="arrivalValue">0</span></label>
+                    <input type="range" id="arrivalTime" min="0" max="100" step="1" value="0">
+                </div>
+                <div class="button-group">
+                    <button id="startSimulation" class="simulate-btn">Start Simulation</button>
+                    <button id="backToSelectionBtn" class="back-btn">← Back to Selection</button>
+                </div>
+            </div>
+            
+            <!-- Gantt Chart will be inserted here -->
+            <div id="gantt-container"></div>
+        </div>
+    </div>
+
+    <!-- Modal for showing schedulability messages -->
+    <div id="schedulabilityModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modal-title">Schedulability Warning</h2>
+            <p id="modal-message"></p>
+            <div class="modal-buttons">
+                <button id="proceedBtn" class="modal-btn">Proceed Anyway</button>
+                <button id="cancelBtn" class="modal-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
