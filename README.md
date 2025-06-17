@@ -1,3 +1,4 @@
+### [Try it Live](https://ganttcraft.netlify.app/)
 # GanttMaster - Gantt Chart Generator for EDF and RMA
 
 GanttMaster is a tool for generating Gantt charts to visualize **EDF (Earliest Deadline First)** and **RMA (Rate Monotonic Algorithm)** scheduling for real-time systems.  
